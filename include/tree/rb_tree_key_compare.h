@@ -33,6 +33,7 @@ namespace ft {
     rb_tree_key_compare(rb_tree_key_compare&& __x) noexcept(std::is_nothrow_move_constructible<KeyCompare>::value)
       : m_keyCompare{ std::move(__x.m_keyCompare) } {}
   };
-}
+
+} // namespace ft
 
 #endif // __FT_RB_TREE_KEY_COMPARE__

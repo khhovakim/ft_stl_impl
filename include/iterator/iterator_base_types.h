@@ -66,21 +66,32 @@ namespace ft {
     using pointer           = const _Tp*;                 ///< Pointer type to the value.
     using reference         = const _Tp&;                 ///< Reference type to the value.
   };
-
-  /// @brief A function to get the iterator category of an iterator.
-  /// @details This function returns the iterator category of the given iterator.
-  template <typename _Iter>
-  inline constexpr typename iterator_traits<_Iter>::iterator_category
-  __iterator_category(const _Iter&)
-  {
-    return typename iterator_traits<_Iter>::iterator_category();
-  }
   
   /// @brief A type alias for the iterator category of an iterator.
   /// @details This type alias is used to simplify the syntax for getting the iterator category.
   template <typename _Iter>
-  using __iterator_category_t = typename iterator_traits<_Iter>::iterator_category;
+  using iterator_category_t = typename iterator_traits<_Iter>::iterator_category;
 
-}
+  /// @brief A type alias for the difference type of an iterator.
+  /// @details This type alias is used to simplify the syntax for getting the difference type.
+  template <typename _Iter>
+  using difference_type_t = typename iterator_traits<_Iter>::difference_type;
+
+  /// @brief A type alias for the value type of an iterator.
+  /// @details This type alias is used to simplify the syntax for getting the value type.
+  template <typename _Iter>
+  using value_type_t = typename iterator_traits<_Iter>::value_type;
+
+  /// @brief A type alias for the pointer type of an iterator.
+  /// @details This type alias is used to simplify the syntax for getting the pointer type.
+  template <typename _Iter>
+  using pointer_t = typename iterator_traits<_Iter>::pointer;
+
+  /// @brief A type alias for the reference type of an iterator.
+  /// @details This type alias is used to simplify the syntax for getting the reference type.
+  template <typename _Iter>
+  using reference_t = typename iterator_traits<_Iter>::reference;
+
+} // namespace ft
 
 #endif // __FT_ITERATOR_BASE_TYPES__

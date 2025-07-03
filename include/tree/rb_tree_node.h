@@ -49,6 +49,7 @@ namespace ft {
     const ValueType&
     __value() const noexcept { return m_valueField; }
   };
-}
+
+} // namespace ft
 
 #endif // __FT_RB_TREE_NODE__

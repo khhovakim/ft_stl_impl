@@ -124,6 +124,7 @@ namespace ft {
       return __x;
     }
   };
-}
+
+} // namespace ft
 
 #endif // _FT_RB_TREE_NODE_BASE__

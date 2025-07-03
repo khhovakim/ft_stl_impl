@@ -64,6 +64,7 @@ namespace ft {
       m_nodeCount       = 0;         // No nodes in the tree
     }
   };
-}
+
+} // namespace ft
 
 #endif // __FT_RB_TREE_HEADER__
