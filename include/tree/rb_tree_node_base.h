@@ -62,66 +62,64 @@ namespace ft {
   ///
 
   struct rb_tree_node_base {
-    public:
-      using base_ptr       =       rb_tree_node_base*; ///< Pointer to base node type.
-      using const_base_ptr = const rb_tree_node_base*; ///< Const pointer to base node type.
-
-    public:
-      /// @brief Get the minimum node in the subtree rooted at x.
-      /// @param x Pointer to the node from which to start searching for the minimum.
-      /// @return Pointer to the leftmost node in the subtree, which is the minimum.
-      /// @details
-      /// This function traverses the left children of the given node until it finds
-      /// the leftmost node, which is the minimum in the subtree.
-      static base_ptr
-      minimum(base_ptr x) noexcept {
-        if ( x == nullptr ) return nullptr; // Handle null case
-
-        while ( x->left != nullptr ) x = x->left;
-        return x;
-      }
-
-      /// @brief Get the maximum node in the subtree rooted at x.
-      /// @param x Pointer to the node from which to start searching for the maximum.
-      /// @return Pointer to the rightmost node in the subtree, which is the maximum.
-      /// @details
-      /// This function traverses the right children of the given node until it finds
-      /// the rightmost node, which is the maximum in the subtree.
-      static base_ptr
-      maximum(base_ptr x) noexcept {
-        if ( x == nullptr ) return nullptr; // Handle null case
-
-        while ( x->right != nullptr ) x = x->right;
-        return x;
-      }
-
-      /// @brief Get the minimum node in the subtree rooted at x (const version).
-      /// @param x Const pointer to the node from which to start searching for the minimum.
-      /// @return Const pointer to the leftmost node in the subtree, which is the minimum.
-      static const_base_ptr
-      minimum(const_base_ptr x) noexcept {
-        if ( x == nullptr ) return nullptr; // Handle null case
-
-        while ( x->left != nullptr ) x = x->left;
-        return x;
-      }
-
-      /// @brief Get the maximum node in the subtree rooted at x (const version).
-      /// @param x Const pointer to the node from which to start searching for the maximum.
-      /// @return Const pointer to the rightmost node in the subtree, which is the maximum.
-      static const_base_ptr
-      maximum(const_base_ptr x) noexcept {
-        if ( x == nullptr ) return nullptr; // Handle null case
-
-        while ( x->right != nullptr ) x = x->right;
-        return x;
-      }
+    using base_ptr       =       rb_tree_node_base*; ///< Pointer to base node type.
+    using const_base_ptr = const rb_tree_node_base*; ///< Const pointer to base node type.
     
-    public:
-      rb_tree_color color; ///< Color of the node (red or black).
-      base_ptr parent;     ///< Pointer to the parent node.
-      base_ptr left;       ///< Pointer to the left child node.
-      base_ptr right;      ///< Pointer to the right child node.
+    rb_tree_color m_color ; ///< Color of the node (red or black).
+    base_ptr      m_parent; ///< Pointer to the parent node.
+    base_ptr      m_left  ; ///< Pointer to the left child node.
+    base_ptr      m_right ; ///< Pointer to the right child node.
+
+    /// @brief Get the minimum node in the subtree rooted at x.
+    /// @param x Pointer to the node from which to start searching for the minimum.
+    /// @return Pointer to the leftmost node in the subtree, which is the minimum.
+    /// @details
+    /// This function traverses the left children of the given node until it finds
+    /// the leftmost node, which is the minimum in the subtree.
+    static base_ptr
+    minimum(base_ptr __x) noexcept {
+      if ( __x == nullptr ) return nullptr; // Handle null case
+
+      while ( __x->m_left != nullptr ) __x = __x->m_left;
+      return __x;
+    }
+
+    /// @brief Get the maximum node in the subtree rooted at x.
+    /// @param x Pointer to the node from which to start searching for the maximum.
+    /// @return Pointer to the rightmost node in the subtree, which is the maximum.
+    /// @details
+    /// This function traverses the right children of the given node until it finds
+    /// the rightmost node, which is the maximum in the subtree.
+    static base_ptr
+    maximum(base_ptr __x) noexcept {
+      if ( __x == nullptr ) return nullptr; // Handle null case
+
+      while ( __x->m_right != nullptr ) __x = __x->m_right;
+      return __x;
+    }
+
+    /// @brief Get the minimum node in the subtree rooted at x (const version).
+    /// @param x Const pointer to the node from which to start searching for the minimum.
+    /// @return Const pointer to the leftmost node in the subtree, which is the minimum.
+    static const_base_ptr
+    minimum(const_base_ptr __x) noexcept {
+      if ( __x == nullptr ) return nullptr; // Handle null case
+
+      while ( __x->m_left != nullptr ) __x = __x->m_left;
+      return __x;
+    }
+
+    /// @brief Get the maximum node in the subtree rooted at x (const version).
+    /// @param x Const pointer to the node from which to start searching for the maximum.
+    /// @return Const pointer to the rightmost node in the subtree, which is the maximum.
+    static const_base_ptr
+    maximum(const_base_ptr __x) noexcept {
+      if ( __x == nullptr ) return nullptr; // Handle null case
+
+      while ( __x->m_right != nullptr ) __x = __x->m_right;
+      return __x;
+    }
+
   };
 
 }
