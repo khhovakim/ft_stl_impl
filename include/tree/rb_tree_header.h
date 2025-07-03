@@ -39,7 +39,8 @@ namespace ft {
 
     /// @brief Move data from another rb_tree_header instance.
     /// @param __from The rb_tree_header instance from which to move data.
-    void __move_data(rb_tree_header& __from) noexcept
+    void
+    __move_data(rb_tree_header& __from) noexcept
     {
       m_header.m_color  = __from.m_header.m_color ;
       m_header.m_parent = __from.m_header.m_parent;
@@ -54,7 +55,8 @@ namespace ft {
 
     /// @brief Reset the tree header.
     /// @details Resets the header to its initial state, with no nodes.
-    void __reset() noexcept
+    void
+    __reset() noexcept
     {
       m_header.m_parent = nullptr;   // No parent node
       m_header.m_left   = &m_header; // Leftmost node points to itself

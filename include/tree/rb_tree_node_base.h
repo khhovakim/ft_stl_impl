@@ -77,7 +77,8 @@ namespace ft {
     /// This function traverses the left children of the given node until it finds
     /// the leftmost node, which is the minimum in the subtree.
     static base_ptr
-    minimum(base_ptr __x) noexcept {
+    minimum(base_ptr __x) noexcept
+    {
       if ( __x == nullptr ) return nullptr; // Handle null case
 
       while ( __x->m_left != nullptr ) __x = __x->m_left;
@@ -91,7 +92,8 @@ namespace ft {
     /// This function traverses the right children of the given node until it finds
     /// the rightmost node, which is the maximum in the subtree.
     static base_ptr
-    maximum(base_ptr __x) noexcept {
+    maximum(base_ptr __x) noexcept
+    {
       if ( __x == nullptr ) return nullptr; // Handle null case
 
       while ( __x->m_right != nullptr ) __x = __x->m_right;
@@ -102,7 +104,8 @@ namespace ft {
     /// @param x Const pointer to the node from which to start searching for the minimum.
     /// @return Const pointer to the leftmost node in the subtree, which is the minimum.
     static const_base_ptr
-    minimum(const_base_ptr __x) noexcept {
+    minimum(const_base_ptr __x) noexcept
+    {
       if ( __x == nullptr ) return nullptr; // Handle null case
 
       while ( __x->m_left != nullptr ) __x = __x->m_left;
@@ -113,15 +116,14 @@ namespace ft {
     /// @param x Const pointer to the node from which to start searching for the maximum.
     /// @return Const pointer to the rightmost node in the subtree, which is the maximum.
     static const_base_ptr
-    maximum(const_base_ptr __x) noexcept {
+    maximum(const_base_ptr __x) noexcept
+    {
       if ( __x == nullptr ) return nullptr; // Handle null case
 
       while ( __x->m_right != nullptr ) __x = __x->m_right;
       return __x;
     }
-
   };
-
 }
 
 #endif // _FT_RB_TREE_NODE_BASE__
