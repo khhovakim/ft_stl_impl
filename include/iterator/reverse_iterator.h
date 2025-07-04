@@ -1,6 +1,8 @@
 #ifndef   __FT_REVERSE_ITERATOR__
 # define  __FT_REVERSE_ITERATOR__
 
+# include <memory> // For std::addressof
+
 # include "iterator_base_types.h" // For iterator tags
 
 namespace ft {
