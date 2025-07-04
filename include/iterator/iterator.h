@@ -3,5 +3,6 @@
 
 # include "iterator_base_types.h"
 # include "iterator_base_funcs.h"
+# include "reverse_iterator.h"
 
-#endif
+#endif // __FT_ITERATOR__
