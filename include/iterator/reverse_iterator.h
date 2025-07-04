@@ -1,8 +1,6 @@
 #ifndef   __FT_REVERSE_ITERATOR__
 # define  __FT_REVERSE_ITERATOR__
 
-# include <memory> // For std::addressof
-
 # include "iterator_base_types.h" // For iterator tags
 
 namespace ft {
@@ -45,7 +43,7 @@ namespace ft {
       constexpr reverse_iterator&
       operator=(const reverse_iterator<_Iter2>& __x)
       {
-        if (this == std::addressof(__x)) {
+        if ( this == &__x ) {
           return *this;
         }
         m_current = __x.base();
@@ -72,7 +70,7 @@ namespace ft {
       /// @brief Arrow operator.
       /// @return A pointer to the value pointed to by the iterator.
       constexpr pointer
-      operator->() const { return std::addressof(operator*()); }
+      operator->() const { return &this->operator*(); }
 
     public:
       /// @brief Pre-increment operator.
